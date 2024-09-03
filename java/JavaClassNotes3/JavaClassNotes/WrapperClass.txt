@@ -1,0 +1,37 @@
+Java is an object-oriented language and can view everything as an object. A simple file can be treated as an object , an address of a system can be seen as an object , an image can be treated as an object (with java.awt.Image) and a simple data type can be converted into an object (with wrapper classes). This tutorial discusses wrapper classes. Wrapper classes are used to convert any data type into an object.
+
+The primitive data types are not objects; they do not belong to any class; they are defined in the language itself. Sometimes, it is required to convert data types into objects in Java language. For example, upto JDK1.4, the data structures accept only objects to store. A data type is to be converted into an object and then added to a Stack or Vector etc. For this conversion, the designers introduced wrapper classes.
+
+What are Wrapper classes?
+
+As the name says, a wrapper class wraps (encloses) around a data type and gives it an object appearance. Wherever, the data type is required as an object, this object can be used. Wrapper classes include methods to unwrap the object and give back the data type. It can be compared with a chocolate. The manufacturer wraps the chocolate with some foil or paper to prevent from pollution. The user takes the chocolate, removes and throws the wrapper and eats it.
+
+Observe the following conversion.
+
+ int k = 100;
+    Integer it1 = new Integer(k); 
+The int data type k is converted into an object, it1 using Integer class. The it1 object can be used in Java programming wherever k is required an object.
+
+The following code can be used to unwrap (getting back int from Integer object) the object it1.
+
+int m = it1.intValue();
+System.out.println(m*m); // prints 10000 
+intValue() is a method of Integer class that returns an int data type.
+
+Importance of Wrapper classes
+
+There are mainly two uses with wrapper classes.
+
+1) To convert simple data types into objects, that is, to give object form to a data type; here constructors are used.
+
+2) To convert strings into data types (known as parsing operations), here methods of type parseXXX() are used.
+
+Features of the Java wrapper Classes.
+
+1) Wrapper classes convert numeric strings into numeric values.
+
+2) The way to store primitive data in an object.
+
+3) The valueOf() method is available in all wrapper classes except Character
+
+4) All wrapper classes have typeValue() method. This method returns the value of the object as its primitive type.

@@ -1,0 +1,98 @@
+How to read all elements in vector by using iterator?
+
+import java.util.Iterator;
+import java.util.Vector;
+
+public class VectorIterator {
+
+	public static void main(String a[]){
+		Vector<String> vct = new Vector<String>();
+		//adding elements to the end
+		vct.add("First");
+		vct.add("Second");
+		vct.add("Third");
+		vct.add("Random");
+		Iterator<String> itr = vct.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+How to copy or clone a vector?
+
+import java.util.Vector; 
+public class MyVectorClone 
+{ 
+public static void main(String a[])
+{ 
+Vector<String> vct = new Vector<String>(); 
+//adding elements to the end 
+vct.add("First"); 
+vct.add("Second"); 
+vct.add("Third"); 
+vct.add("Random"); 
+System.out.println("Actual vector:"+vct); 
+Vector<String> copy = (Vector<String>) vct.clone(); 
+System.out.println("Cloned vector:"+copy); 
+} 
+} 
+
+How to add all elements of a list to vector?
+
+import java.util.ArrayList; import java.util.List; import java.util.Vector; public class MyVectorNewCollection { public static void main(String a[]){ Vector<String> vct = new Vector<String>(); //adding elements to the end vct.add("First"); vct.add("Second"); vct.add("Third"); vct.add("Random"); System.out.println("Actual vector:"+vct); List<String> list = new ArrayList<String>(); list.add("one"); list.add("two"); vct.addAll(list); System.out.println("After Copy: "+vct); } } 
+
+How to delete all elements from my vector?
+
+import java.util.Vector; public class ClearMyVector { public static void main(String a[]){ Vector<String> vct = new Vector<String>(); //adding elements to the end vct.add("First"); vct.add("Second"); vct.add("Third"); vct.add("Random"); System.out.println("Actual vector:"+vct); vct.clear(); System.out.println("After clear vector:"+vct); } } 
+
+How to copy vector to array?
+
+import java.util.Vector; public class MyVectorArrayCopy { public static void main(String a[]){ Vector<String> vct = new Vector<String>(); vct.add("First"); vct.add("Second"); vct.add("Third"); vct.add("Random"); System.out.println("Actual vector:"+vct); String[] copyArr = new String[vct.size()]; vct.copyInto(copyArr); System.out.println("Copied Array content:"); for(String str:copyArr){ System.out.println(str); } } } 
+
+
+How to add all elements of a list to LinkedList?
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class MyLinkedListNewCollection {
+
+	public static void main(String a[]){
+		
+		LinkedList<String> arrl = new LinkedList<String>();
+		//adding elements to the end
+		arrl.add("First");
+		arrl.add("Second");
+		arrl.add("Third");
+		arrl.add("Random");
+		System.out.println("Actual LinkedList:"+arrl);
+		List<String> list = new ArrayList<String>();
+		list.add("one");
+		list.add("two");
+		arrl.addAll(list);
+		System.out.println("After Copy: "+arrl);
+	}
+}
+
+How to delete all elements from my LinkedList?
+
+import java.util.LinkedList;
+
+public class ClearMyLinkedList {
+
+	public static void main(String a[]){
+		
+		LinkedList<String> arrl = new LinkedList<String>();
+		//adding elements to the end
+		arrl.add("First");
+		arrl.add("Second");
+		arrl.add("Third");
+		arrl.add("Random");
+		System.out.println("Actual LinkedList:"+arrl);
+		arrl.clear();
+		System.out.println("After clear LinkedList:"+arrl);
+	}
+}
+

@@ -1,0 +1,230 @@
+1. Can you create a sub class to the following class?
+class A
+{
+    private A()
+    {
+        //First Constructor
+    }
+     
+    private A(int i)
+    {
+        //Second Constructor
+    }
+}
+No, you can’t create sub classes to that class which has only private constructors.
+2. Can you find out the error in the below code?
+private class A
+{
+    private class B
+    {
+        //Inner class
+    }
+}
+Inner classes can be private, but outer classes can not be private.
+3. public class Test
+{
+	public static void main(String[] args)
+	{
+		// How many objects are eligible for
+		// garbage collection after this line?
+		m1(); // Line 5
+	}
+
+	static void m1()
+	{
+		Test t1 = new Test();
+		Test t2 = new Test();
+	}
+}
+Question :
+How many objects are eligible for garbage collection after execution of line 5 ?
+Answer :2
+4. public class Test
+{
+	public static void main(String [] args)
+	{
+		Test t1 = new Test();
+		Test t2 = m1(t1); // line 6
+		Test t3 = new Test();
+		t2 = t3; // line 8
+		
+	}
+	
+	static Test m1(Test temp)
+	{
+		temp = new Test();
+		return temp;
+	}
+}
+Question :
+How many objects are eligible for garbage collection after execution of line 8?
+Answer :1
+5. Which of the given choices is a possible output? 
+import java.util.*;
+public class hashSet {
+	public static void main(String[] args)
+	{
+		HashSet<String> hashSet = new HashSet<>();
+		hashSet.add("Geeks");
+		hashSet.add("For");
+		hashSet.add("Geeks");
+		hashSet.add("GeeksforGeeks");
+
+		System.out.println(hashSet);
+	}
+}
+a) [Geeks, For, Geeks, GeeksforGeeks] 
+b) [GeeksforGeeks, Geeks, For] 
+
+Ans. (b) 
+
+6. What is the output of the following program? 
+import java.util.*;
+public class stack {
+	public static void main(String[] args)
+	{
+		List<String> list = new LinkedList<>();
+		list.add("Geeks");
+		list.add("For");
+		list.add("Geeks");
+		list.add("GeeksforGeeks");
+		Iterator<Integer> iter = list.iterator();
+
+		while (iter.hasNext())
+			System.out.printf(iter.next() + " ");
+
+		System.out.println();
+	}
+}
+a) Geeks for Geeks GeeksforGeeks 
+b) GeeksforGeeks Geeks for Geeks 
+c) Runtime Error 
+d) Compilation Error
+
+Ans. (d) 
+7. Basic Java language functions are stored in which of the following java package?
+(a) java.lang (b) java.io (c) java.net (d) java.util (e) java.awt
+
+Ans) a
+8. Which of the following has a method names flush( )?
+(a) Input stream (b) Output Stream
+(c) Reader stream (d) Input reader stream
+(e) Input output stream.
+
+Ans) b
+
+9. File class is included in which package?
+(a) java.io package (b) java.lang package
+(c) java.awt package (d) java.net.package
+(e) java.util.package.
+
+Ans) a
+
+10. Which of these methods is used to notify observer the change in observed object?
+a) update()
+b) notify()
+c) check()
+d) observed()
+
+Answer: a
+
+11. Which of these package provides the ability to read and write in Zip format?
+a) java.lang
+b) java.io
+c) java.util.zip
+d) java.util.zar
+
+Answer: c
+
+12. Which of the following is not a segment of memory in java?
+a) Stack Segment
+b) Heap Segment
+c) Code Segment
+d) Register Segment
+
+Answer: d
+Explanation: There are only 3 types of memory segment. Stack Segment, Heap Segment and Code Segment.
+
+13. Which one of the following is a class loader?
+a) Bootstrap
+b) Compiler
+c) Heap
+d) Interpreter
+
+Answer: a
+Explanation: Bootstrap is a class loader. It loads the classes into memory.
+
+14. Which of these methods is not a Locale class?
+a) UK
+b) US
+c) INDIA
+d) KOREA
+
+Answer c)
+
+15. What will be the output of the following Java program?
+
+    import java.util.*;
+    class LOCALE_CLASS
+    {
+        public static void main(String args[])
+        {
+            Locale obj = new Locale("HINDI", "INDIA") ;
+            System.out.print(obj.getCountry());
+        }
+    }
+a) India
+b) INDIA
+c) Compilation Error
+d) Nothing is displayed
+
+Answer: b
+
+16. Which of the following is not a maven goal?
+a) clean
+b) package
+c) install
+d) debug
+
+Answer: d
+Explanation: clean, package, install are maven goals. Debug is used finding and resolving of defects.
+
+17. “request” is instance of which one of the following classes?
+a) Request
+b) HttpRequest
+c) HttpServletRequest
+d) ServletRequest
+
+Answer: c
+Explanation: request is object of HttpServletRequest.
+
+18. How is the dynamic interception of requests and responses to transform the information done?
+a) servlet container
+b) servlet config
+c) servlet context
+d) servlet filter
+
+Answer: d
+Explanation: Servlet has various components like container, config, context, filter. Servlet filter provides 
+the dynamic interception of requests and responses to transform the information.
+
+19. Which of the below is not a valid design pattern?
+a) Singleton
+b) Factory
+c) Command
+d) Java
+
+Answer: d
+Explanation: Design pattern is a general repeatable solution to a commonly occurring problem in software design. 
+There are various patterns available for use in day to day coding problems.
+
+20. Which one of the following causes memory leak?
+a) Release database connection when querying is complete
+b) Use Finally block as much as possible
+c) Release instances stored in static tables
+d) Not using Finally block often
+
+Answer: d
+Explanation: Finally block is called in successful as well exception scenarios. Hence, all the connections 
+are closed properly which avoids memory leak.
+

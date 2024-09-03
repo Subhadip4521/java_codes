@@ -1,0 +1,149 @@
+1. public static void main(String[] args)
+2. static public void main(String[] args)
+3. static final synchronized strictfp public void main(String... abc)
+class Test
+{
+public static void main(String args[])
+{
+sop("HI");
+}
+public static void main(int args[])
+{
+sop("Hello")
+}
+}
+
+class P
+{
+public static void main(String args[])
+{
+sop("parent");
+}
+}
+class C extends P
+{
+
+}
+//save as P.java
+javac P.java
+java P
+o/p: parent
+java C
+o/p: parent
+
+class P
+{
+public static void main(String args[])
+{
+sop("parent");
+}
+}
+
+class C extends P
+{
+public static void main(String args[])
+{
+sop("child");
+}
+}
+ javac P.java
+java P
+o/p:parent
+java C
+o/p: child
+Method Hiding concept
+********
+int add(int x, int y)
+{
+
+}
+int add(float x, double y)
+{
+
+}
+jvm, jre, jdk
+**************************
+Encapsulation=Data hiding+Abstraction
+
+class Student
+{
+data member+ methods(behaviour)
+}
+
+public class Access{
+	private double val;
+	public double getVal()
+	{
+	//VALIDATION
+	return bal;
+	}
+	public void setBalance(double balance)
+	{
+	//validation
+	this.balance=balance;
+	}
+}
+	
+Is a relationship==> Inheritance
+
+
+C c=new C()                          P p=new C()
+AL l=new AL()                       List l=new AL() 
+1. 				1. 
+
+
+1.Collection(I)
+
+2.List(I)
+
+3.AL   LL   Vector
+	   
+4.	    Stack
+
+
+int float string
+polymorphism-> overloading, overriding, usage of parent reference 
+               to hold child object is the concept of polymorphism(P p=new C() )
+
+Type casting (upcasting downcasting)
+
+Singleton class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

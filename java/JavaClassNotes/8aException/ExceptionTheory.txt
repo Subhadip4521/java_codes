@@ -1,0 +1,7 @@
+Exception is an event that terminates the program abnormally
+Exception handling in two ways (i) try catch (ii) throws
+Types of exception (i) checked (ii) unchecked (not compiled by compiler) (iii) error
+throws keyword is used to handover user created exception to caller method
+throw keyword is used to handover user created exception to jvm
+If a programmer wants to create exception object mandatorily or explicitly and handover/ give this exception object to the JVM then he/she should go for throw keyword.
+If a method want to intimate about checked exception handling process to other method then we have to depend on throws keyword.

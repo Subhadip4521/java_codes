@@ -1,0 +1,33 @@
+//save as Simple.java  
+package mypack;  
+public class Simple{  
+ public static void main(String args[]){  
+    System.out.println("Welcome to package");  
+   }  
+}  
+
+javac -d . Simple.java  
+
+java mypack.Simple
+
+//save by A.java  
+package pack;  
+public class A{  
+  public void msg(){System.out.println("Hello");}  
+}  
+
+javac -d . A.java  
+
+//save by B.java  
+package mypack;  
+import pack.*;  
+  
+class B{  
+  public static void main(String args[]){  
+   A obj = new A();  
+   obj.msg();  
+  }  
+}  
+
+javac -d . B.java  
+java mypack.B

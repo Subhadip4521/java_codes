@@ -1,0 +1,101 @@
+Difference between 
+Child c = new Child(); and 
+Parent p =new Child();
+
+class Parent {
+	String name = "Vivek";
+}
+class Child extends Parent{
+	int age = 30;
+}
+class Demo {    
+    public static void main (String [] args) {
+    	Child c = new Child();
+    	System.out.println(c.name);
+    	System.out.println(c.age);
+    	
+    	Parent p = new Child();
+    	System.out.println(p.name);
+    	//System.out.println(p.age); compile error
+    }
+}
+Div 1
+primitive variable -->int x=10;
+reference variable --> Parent p=new Parent() here ref var is p
+Div 2 Based on position of declaration
+1. Instance variable ---->
+class A
+{
+int x=10;
+psvm(S args){
+S.o.p(x);
+A a=new A();
+sop(a.x);
+}
+public void m1(){
+sop(x);
+}
+}
+2. Static variable  ---->
+class Test
+{
+static int x=10;
+psvm(){
+Test t=new Test();
+sop(t.x)
+sop(Test.x)
+sop(x)
+}
+3. Local variable ---->
+class Test
+{
+psvm()
+{
+int i=0;
+for(int j=0; j<10;j++)
+{
+i=i+j;
+sop(j);no error
+}
+sop(i);
+sop(j); error as out ofblock
+}
+}
+}
+
+class A
+{
+void sum()
+{
+}
+}
+class B extends A
+{//sum
+}
+class C extends A
+{//sum
+}
+
+class D extends B,C
+{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

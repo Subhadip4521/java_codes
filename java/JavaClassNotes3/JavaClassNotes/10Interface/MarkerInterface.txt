@@ -1,0 +1,246 @@
+/*
+Marker interface:
+If an interface doesn't contain any methods and by implementing that interface if our 
+objects will get some ability such type of interfaces are called Marker interface (or) Tag 
+interface (or) Ability interface. 
+Example:
+Serializable
+Cloneable
+RandomAccess These are marked for some ability
+SingleThreadModel
+
+The declaration of marker interface is the same as interface in Java 
+but the interface must be empty. For example:
+
+public interface Serializable   
+{  
+  
+}  
+
+Without having any methods in marker interface how objects will get ability ? 
+Internally JVM is responsible to provide required ability.
+
+Why JVM is providing the required ability in marker interfaces ? 
+To reduce complexity of the programming.
+
+Is it possible to create our own marker interface ? 
+Yes, but customization of JVM must be required.
+Ex : Sleepable , Jumpable , ....
+
+Cloneable Interface
+Cloneable interface in Java is also a marker interface that belong to java.lang package. 
+It generates replica (copy) of an object with different name. We can implement the 
+interface in the class of which class object to be cloned. It indicates the clone() 
+method of the Object class. If we do not implement the Cloneable interface in the class 
+and invokes the clone() method, it throws the ClassNotSupportedException.
+
+Note that a class that implements the Cloneable interface must override 
+the clone() method with a public method. Let's see an example.
+
+import java.util.Scanner;  
+public class Product implements Cloneable   
+{  
+int pid;  
+String pname;  
+double pcost;  
+//Product class constructor   
+public Product (int pid, String pname, double pcost)  
+{  
+this.pid = pid;  
+this.pname = pname;  
+this.pcost = pcost;  
+}  
+//method that prints the detail on the console  
+public void showDetail()   
+{  
+System.out.println("Product ID: "+pid);  
+System.out.println("Product Name: "+pname);  
+System.out.println("Product Cost: "+pcost);  
+}  
+public static void main (String args[]) throws CloneNotSupportedException   
+{  
+//reading values of the product from the user  
+Scanner sc = new Scanner(System.in);  
+System.out.print("Enter product ID: ");  
+int pid = sc.nextInt();  
+System.out.print("Enter product name: ");  
+String pname = sc.next();  
+System.out.print("Enter product Cost: ");  
+double pcost = sc.nextDouble();  
+System.out.println("-------Product Detail--------");  
+Product p1 = new Product(pid, pname, pcost);  
+//cloning the object of the Product class using the clone() method  
+Product p2 = (Product) p1.clone();  
+//invoking the method to print detail
+p1.showDetail();  
+p2.showDetail();  
+}  
+}  
+
+Serializable Interface
+It is a marker interface in Java that is defined in the java.io package. 
+If we want to make the class serializable, we must implement the Serializable interface. 
+If a class implements the Serializable interface, we can serialize or deserialize 
+the state of an object of that class.
+
+Serialization (converting an object into byte stream) is a mechanism in which 
+object state is read from the memory and written into a file or database. 
+Deserialization (converting byte stream into an object) is the opposite of 
+serialization means that object state reading from a file or database and written 
+back into memory is called deserialization of object.
+
+Serialization (writing) can be achieved with the ObjectOutputStream class and 
+deserialization (reading) can be achieved with the ObjectInputStream class.
+
+Let's see example of serialization and deserialization.
+
+Example of Serialization
+
+Employee.java
+import java.io.Serializable;    
+public class Employee implements Serializable  
+{    
+int empid;    
+String empname;    
+public Employee(int empid, String empname)   
+{    
+this.empid = empid;    
+this.empname = empname;    
+}    
+} 
+
+SerializationExample.java
+
+import java.io.*;    
+class SerializationExample  
+{    
+public static void main(String args[])  
+{    
+try  
+{    
+//Creating the object    
+Employee emp =new Employee(1187345,"Andrew");    
+//Creating stream and writing the object    
+FileOutputStream fout=new FileOutputStream("employee data.txt");    
+ObjectOutputStream out=new ObjectOutputStream(fout);    
+out.writeObject(emp);    
+out.flush();    
+//closing the stream    
+out.close();    
+System.out.println("Data has been read from the file.");    
+}  
+catch(Exception e)  
+{  
+e.printStackTrace();  
+}    
+}    
+}   
+
+Remote Interface
+Remote interface is a marker interface that belong to java.rmi package. 
+It marks an object as remote that can be accessed from another machine (host). 
+We must implement the Remote interface if we want to make an object as remote. 
+It identifies the interfaces whose methods can be invoked from a non-local JVM. 
+Any remote object must implement the interface directly or indirectly.
+
+Let's define a Remote interface and implement it in a Java program.
+
+AddAllRemote.java
+
+import java.rmi.*;  
+import java.rmi.server.*;  
+public class AddAllRemote extends UnicastRemoteObject implements Adder  
+{  
+AddAllRemote()throws RemoteException  
+{  
+super();  
+}  
+public int add(int r, int s)  
+{  
+return r+s;  
+}  
+
+Create and Start the Remote Application
+Server.java
+
+import java.rmi.*;  
+import java.rmi.registry.*;  
+public class Server  
+{  
+public static void main(String args[])  
+{  
+try  
+{  
+AddAll stub=new AddAllRemote();  
+Naming.rebind("rmi://localhost:5000/sak",stub);  
+}  
+catch(Exception e)  
+{  
+System.out.println(e);  
+}  
+}  
+}  
+
+Create and Start the Client Application
+
+Client.java
+
+import java.rmi.*;  
+public class Client  
+{  
+public static void main(String args[])  
+{  
+try  
+{  
+AddAll stub=(AddAll)Naming.lookup("rmi://localhost:5000/sak");  
+System.out.println(stub.add(29,18));  
+}  
+catch(Exception e)  
+{  
+}  
+}  
+}   
+
+
+Custom Marker Interface
+Apart from built-in marker interface, Java also allows us to 
+create own marker interface. Let's see an example.
+
+CustomMarkerInterfaceExample.java
+
+//custom marker interface  
+interface Car     
+{  
+   
+}  
+//custom marker interface  
+interface Engine    
+{  
+   
+}  
+//class that implements the Car marker interface  
+class Vehicle implements Car      
+{  
+static void isVehicle()  
+{  
+System.out.println("Car is a vehicle.");  
+}  
+}  
+//class that implements the Engine marker interface  
+class Status implements Engine  
+{  
+static void isWorking()  
+{  
+System.out.println("Yes, engine is working.");  
+}  
+}  
+//main class  
+public class CustomMarkerInterfaceExample  
+{  
+public static void main(String args[])  
+{  
+//invoking the methods of the class  
+Vehicle.isVehicle();  
+Status.isWorking();  
+}  
+}  

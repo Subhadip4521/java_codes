@@ -1,0 +1,85 @@
+1. Autowiring feature of spring framework enables you to inject the object dependency implicitly. 
+It internally uses setter or constructor injection.
+Autowiring can't be used to inject primitive and string values. It works with reference only.
+
+2.what is dependency check values in spring?
+We can use dependency checking feature to make sure the required properties have been set or injected.
+
+3. what are the important features of  spring batch
+Restorability: Restart a batch program from where it failed.
+
+Different Readers and Writers : Provides great support to read from text files, csv, JMS, JDBC, Hibernate, 
+iBatis etc. It can write to JMS, JDBC, Hibernate, files and many more.
+
+Chunk Processing : If we have 1 Million records to process, these can be processed in configurable 
+chunks (1000 at a time or 10000 at a time).
+
+Easy to implement proper transaction management even when using chunk processing.
+
+Easy to implement parallel processing. With simple configuration, different steps can be run in parallel.
+
+4.Explain how to create a Spring Boot application using Maven.
+
+Spring Boot CLI
+Spring Starter Project Wizard
+Spring Initializr
+Spring Maven Project
+
+5. What is Spring Boot dependency management?
+Spring Boot dependency management is basically used to manage dependencies and configuration 
+automatically without you specifying the version for any of that dependencies.
+
+6. How to enable HTTP/2 support in Spring Boot?
+You can enable the HTTP/2 support in Spring Boot by: server.http2.enabled=true
+
+7. Explain Spring Data.
+Spring Data aims to make it easy for the developers to use relational and non-relational databases, 
+cloud-based data services, and other data access technologies. So, basically, it makes it easy for 
+data access and still retains the underlying data.
+
+8. In which layer, should the boundary of a transaction start?
+The boundary of the transaction should start from the Service Layer since the logic for 
+the business transaction is present in this layer itself.
+
+9. Join wait sleep method in Threading
+10.What are the 2 methods thread can be created. Which one is better
+11.What isthe difference between exception and error.What is checked and unchecked exception.
+12.Customized exception
+13 Throw,throws, final finally finalize
+14 How do you serialize an object using serializable interface?
+15 Parent p=new Parent(); Parent P=new Child();
+16.What are generics.
+17. What is Bounded and Unbounded wildcards in Generics ?
+Bounded Wildcards are those which impose bound on Type. there are two kinds of Bounded wildcards <? extends T> which 
+impose an upper bound by ensuring that type must be sub class of T and <? super T> where its imposing lower bound by 
+ensuring Type must be super class of T. This Generic Type must be instantiated with Type within bound otherwise it 
+will result in compilation error. On the other hand <?> represent and unbounded type because <?> can be replace with 
+any Type.
+18. Can we use Generics with Array?
+This was probably most simple generics interview question in Java, if you know the fact that Array doesn't 
+support Generics and that's why Joshua Bloch suggested in Effective Java to prefer List over Array because 
+List can provide compile time type-safety over Array.
+19. Example of runtime polymorphism
+20. Difference arraylist linked list
+21. Explain Collections Class
+java.util.Collections is a class consists of static methods that operate on collections. It contains polymorphic 
+algorithms to operate on collections, "wrappers". This 
+class contains methods for algorithms, like binary sorting, search, shuffling, etc.
+22. What is the difference between poll() and remove() method of Queue interface? (answer)
+Though both poll() and remove() method from Queue is used to remove the object and returns the head of the queue, 
+there is a subtle difference between them. If Queue is empty() then a call to remove() method will throw Exception, 
+while a call to poll() method returns null. By the way, exactly which element is removed from the queue depends upon 
+queue's ordering policy and varies between different implementation, for example, PriorityQueue keeps the lowest element 
+as per Comparator or Comparable at head position.
+23. What Is The Difference Between An Object And Object Reference?
+An object is an instance of a class. Object reference is a pointer to the object. There can be many references  
+to the same object.
+24. What Is The Difference Between String And String Buffer?
+Object's of String class is immutable and object's of StringBuffer class is mutable moreover 
+String buffer is faster in concatenation.
+25. Marker interface. Why I will implement it.
+26. What is singleton class
+27. What is factory method
+28. What is adaptor class
+
+

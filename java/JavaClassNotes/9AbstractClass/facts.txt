@@ -1,0 +1,43 @@
+Abstract method cannot be static as static methods should have a body and abstract methods should not.
+
+Can an abstract class have static methods?
+
+Yes, definitely can have as a static method is special flavor of concrete method. We know a static method can be called with object name (not possible here), class name and directly without the help of an object. Following program explains.
+
+Java
+
+abstract class Test
+{
+  public static void display()
+  {
+    System.out.println("Hello 1");
+  }
+}
+public class Demo extends Test
+{
+  public static void main(String args[]) 
+  {
+    display();
+    Test.display();
+  }
+}
+
+abstract class Test
+{
+  public static void display()
+  {
+    System.out.println("Hello 1");
+  }
+}
+public class Demo extends Test
+{
+  public static void main(String args[]) 
+  {
+    display();
+    Test.display();
+  }
+}
+
+Can an interface have static methods?
+
+No, impossible. All methods of an interface must be public and abstract (by default takes also if not mentioned). As static methods should have a body, the interface methods cannot be static.
